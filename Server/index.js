@@ -27,6 +27,15 @@ app.get("/allusers", (req, res) => {
     });
   });
 
+  app.get("/loginProcessing/:id", (req, res) => {
+    qry= "select t.user_password from ergo.ergophile_user_login_info t where t.user_email = ?";
+    value = req.params.id;
+      db.query(qry,value,(err,data) => {
+          if(err) res.json(err);
+          else return res.json(data);
+      });
+    });
+
 app.get("/userbyid/:id", (req, res) => {
   qry = "select * from ergo.ergophile_user where user_id = ?";
   value = req.params.id;
@@ -86,5 +95,5 @@ app.delete("/deluser",(req,res) =>{
 
 
 app.listen(8080, () => {
-  console.log(`Server is running on port 8000.`);
+  console.log(`Server is running on port 8080.`);
 });

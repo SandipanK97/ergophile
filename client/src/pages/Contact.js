@@ -193,8 +193,8 @@ navigator.geolocation.getCurrentPosition((position)=> {
     return (
         <Wrapper>
         <nav>
-        <div class="menu">
-            <div class="logo">
+        <div className="menu">
+            <div className="logo">
             <a href="/">Portfolio</a>
             </div>
             <ul>
@@ -205,24 +205,24 @@ navigator.geolocation.getCurrentPosition((position)=> {
         </div>
         </nav>
         <div><img src='./images/bodyImg.png' alt='bodyImg'/></div>
-    <div class="center">
+    <div className="center">
 
-    <div class="title">Feel free to write</div>
+    <div className="title">Feel free to write</div>
 
     <br></br><br></br>
     <ol>
-    <li><div class="sub_title">Name</div></li>
-    <li><div class="sub_title">Email</div></li>
-    <li><div class="sub_title">Contact number</div></li>
+    <li><div className="sub_title">Name</div></li>
+    <li><div className="sub_title">Email</div></li>
+    <li><div className="sub_title">Contact number</div></li>
     </ol>
     
-    <div class="btns">
+    <div className="btns">
     <button>Submit</button>
     <button>Subscribe</button>
     </div>
     <ul>
     <li><div id="imgW"><img src={imageURL} alt="temp"/></div></li>
-    <li><div class="sub_title" id="temp">{temp}</div><div class="sub_title" id="desc">{weatherDescription}</div></li>
+    <li><div className="sub_title" id="temp">{temp}</div><div className="sub_title" id="desc">{weatherDescription}</div></li>
     </ul>
    
 </div>
