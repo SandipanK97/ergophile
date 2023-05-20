@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@450&display=swap');
+  body{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Montserrat', sans-serif;
+     font-weight: normal;
+     background-image: url('./images/bodyImg.png');
+    }
+  .errorMsg {
+    max-width: 350px;
+    color: #f21e08;
+    padding: 2px 0;
+    margin-top: 2px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  
+  .form-control {
+   position: relative;
+    display: table;
+    flex-direction: row;
+    margin: 5px;
+    width: 30%;
+    text-align: center;
+    top:20%;
+    left:30%;
+   }
+  
+  .form-control label {
+    width: 40%;
+    text-align: left;
+  }
+  
+  
+  .form-control input {
+    width: 60%;
+   font-weight:bolder;
+    
+  }
+  .form-control select option {
+    width: 60%;
+   font-weight:bolder;
+    
+  }
+
+  #btn input{
+    position: relative;
+    background-color:whitesmoke;
+    color:  #000048;
+    font-size: 16px;
+    font-weight:500;
+    padding: 5px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    top:20%;
+    left:40%;
+  }
+  #btn input:hover{
+    background-color:#000048;
+    color:  whitesmoke;
+    transition: all 0.5s ease;
+  }
+  button {
+    max-width: 150px;
+    padding: 12px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    body {
+      width: 90%;
+    }
+  
+    .errorMsg {
+      max-width: 100%;
+    }
+  
+    .form-control {
+      flex-direction: column;
+    }
+  
+    .form-control input[type="text"],
+    .form-control input[type="password"] {
+      width: inherit;
+    }
+  }
+
+  nav{
+    position: fixed;
+    background:whitesmoke ;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 12;
+    }
+    nav .menu{
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around center;
+    padding: 0 40px;
+    }
+    .menu .logo a{
+    text-decoration: none;
+    color: #000048;
+    font-size: 35px;
+    font-weight: 900;
+    }
+    .menu ul{
+    display: inline-flex;
+    }
+    .menu ul li{
+    list-style: none;
+    margin-left: 7px;
+    }
+    .menu ul li:first-child{
+    margin-left: 0px;
+    }
+    .menu ul li a{
+    text-decoration: none;
+    color: #000048;
+    font-size: 18px;
+    font-weight: 900;
+    padding: 12px 15px;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    }
+    .menu ul li a:hover{
+    background: #000048;
+    color: whitesmoke;
+    }
+   
