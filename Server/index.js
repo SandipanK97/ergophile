@@ -32,7 +32,7 @@ app.get("/allusers", (req, res) => {
     });
   });
 
-//Sandipan
+
 
   app.get("/loginProcessing/:id", (req, res) => {
     qry= "select t.user_password from ergo.ergophile_user_login_info t where t.user_email = ?";
