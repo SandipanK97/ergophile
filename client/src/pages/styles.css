@@ -20,8 +20,8 @@
    position: relative;
     display: table;
     flex-direction: row;
-    margin: 5px;
-    width: 30%;
+    margin: 30px;
+    width: 25%;
     text-align: center;
     top:20%;
     left:30%;
@@ -34,7 +34,7 @@
   
   
   .form-control input {
-    width: 60%;
+    width: 100%;
    font-weight:bolder;
     
   }
@@ -43,31 +43,61 @@
    font-weight:bolder;
     
   }
-
+  
   #btn input{
     position: relative;
     background-color:whitesmoke;
     color:  #000048;
     font-size: 16px;
-    font-weight:500;
+    font-weight:bold;
     padding: 5px 30px;
     border: none;
     cursor: pointer;
     border-radius: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     top:20%;
     left:40%;
   }
+
   #btn input:hover{
     background-color:#000048;
     color:  whitesmoke;
     transition: all 0.5s ease;
   }
-  button {
-    max-width: 150px;
-    padding: 12px;
-  }
-  
+
+ #login-btn {
+  position: relative;
+  background-color:whitesmoke;
+  color:  #000048;
+  font-size: 20px;
+  font-weight:100;
+  padding: 5px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  top:20%;
+  left:40%;
+  width:7%
+ }
+ #forgot-btn {
+  position: relative;
+  background-color:whitesmoke;
+  color:  #000048;
+  font-size: 12px;
+  font-weight:bold;
+  padding: 5px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  top:20%;
+  left:40%;
+  width:7%
+ }
+ #forgot-btn :hover{
+  color:darkblue;
+ }
   @media screen and (max-width: 600px) {
     body {
       width: 90%;

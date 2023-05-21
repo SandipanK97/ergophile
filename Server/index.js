@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
 import mysql from "mysql";
+import nodemailer from 'nodemailer';
+
+
 let qry = "";
 let setString = "";
 let value = "";
@@ -19,6 +22,8 @@ app.use(express.json());
 app.get("/", (req,res) => {
     res.json({ message : "connected"});
 })
+
+
 app.get("/allusers", (req, res) => {
   qry= "select * from ergo.ergophile_user";
     db.query(qry,(err,data) => {
@@ -26,6 +31,8 @@ app.get("/allusers", (req, res) => {
         else return res.json(data);
     });
   });
+
+
 
   app.get("/loginProcessing/:id", (req, res) => {
     qry= "select t.user_password from ergo.ergophile_user_login_info t where t.user_email = ?";
@@ -36,7 +43,45 @@ app.get("/allusers", (req, res) => {
       });
     });
 
-app.get("/userbyid/:id", (req, res) => {
+    app.get("/mailProcessing/:id", (req, res) => {
+      qry= "select t.user_password from ergo.ergophile_user_login_info t where t.user_email = ?";
+      value = req.params.id;
+        db.query(qry,value,(err,data) => {
+            if(err) res.json(err);
+            else {
+              const passDbMail = data[0].user_password;
+
+              try {
+                // Create a Nodemailer transporter
+                let transporter = nodemailer.createTransport({
+                  service: 'Protonmail',
+                  auth: {
+                    user: 'ksandipan0@protonmail.com',
+                    pass: 'Sandipan#97'
+                  }
+                });
+          
+                // Send mail with defined transport object
+                let info =  transporter.sendMail({
+                  from: 'ksandipan0@protonmail.com',
+                  to: 'sk.tech.1997@outlook.com',
+                  subject: 'No-reply@ Ergophile',
+                  text: 'Your Password :'+passDbMail+'\n  .Support team\n Ergophile copyright@2023'
+                });
+          
+                console.log('Email sent:', info.response);
+              } catch (error) {
+                console.error('Error sending email:', error);
+              }
+
+
+              return res.json(data);
+
+            }
+        });
+      });
+
+  app.get("/userbyid/:id", (req, res) => {
   qry = "select * from ergo.ergophile_user where user_id = ?";
   value = req.params.id;
     db.query(qry,value,(err,data) => {
@@ -46,7 +91,7 @@ app.get("/userbyid/:id", (req, res) => {
   });
 
 
-app.post("/adduser",(req,res) =>{
+  app.post("/adduser",(req,res) =>{
   qry = "insert into ergo.ergophile_user  (user_id,user_name,user_dateOfBirth,user_gender,user_email,"
     + " user_phone,user_state,user_city,user_college,user_degree,user_degree_marks,user_GradPassoutYear,"
     + " user_school,user_major,user_HS_marks,user_HSpassoutYear,user_skills,user_workExp,user_ExpYears,user_language)"
@@ -81,7 +126,8 @@ app.post("/adduser",(req,res) =>{
     });
 });
 
-app.delete("/deluser",(req,res) =>{
+
+  app.delete("/deluser",(req,res) =>{
   qry = "delete from ergo.ergophile_user where user_id = ?";
   value =req.body.user_id;
 
