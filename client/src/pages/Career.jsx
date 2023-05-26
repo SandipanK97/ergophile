@@ -6,7 +6,8 @@ import "./styles.css";
 
 export default function Career(props) {
   
-  var afterSubmit = false;
+  
+  const [afterSubmit,setAfterSubmit] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -46,8 +47,9 @@ export default function Career(props) {
     'Content-Type': 'application/json'
     }
 };
-  const response =  axios.post(baseURL, JSON.stringify(formData),customConfig)
-  afterSubmit = (response.status === 200) ? true : false;
+  axios.post(baseURL, JSON.stringify(formData),customConfig);
+  setAfterSubmit(true);
+  return true;
   };
 
   const { name, email, password,language ,workExpYr,role,resume} = formData;
@@ -70,10 +72,10 @@ export default function Career(props) {
             </div>
             </nav>
             <br></br><br></br><br></br><br></br><br></br>
-            <div className="form-control">
-	           <label> Submitted Successfully !</label><br/>
-             <p> Login to know the status of application</p>
-            </div>
+            <center >
+            <h1 style={{ color: 'white' }}>Submitted Successfully !</h1>
+            <h4 style={{ color: 'white' }}>try login</h4>
+            </center>
             </body>
             </div> :
   <div className="Career">
