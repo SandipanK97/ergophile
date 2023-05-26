@@ -38,6 +38,10 @@
    font-weight:bolder;
     
   }
+  .form-control:hover {
+    background-color: #D3D3D3;
+    
+  }
   .form-control select option {
     width: 60%;
    font-weight:bolder;

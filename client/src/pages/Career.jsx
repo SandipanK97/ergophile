@@ -1,13 +1,20 @@
 import React, { useState } from "react";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 import "./styles.css";
+
 export default function Career(props) {
+  
+  var afterSubmit = false;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     language:'',
-    workExpYr:''
+    workExpYr:'',
+    role:'',
+    resume:''
   });
 
   const handleChange = (e) => {
@@ -20,14 +27,55 @@ export default function Career(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Access the form values from the formData object
-    const { name, email, password ,language,workExpYr} = formData;
-    // Do something with the form values...
+    
+    const { name, email, password ,language,workExpYr,role} = formData;
+
+    if (name === '' || name ===null || password === '' || password ===null||
+    email === '' || email ===null || language === '' || language ===null||
+    workExpYr === '' || workExpYr ===null || role === '' || role ===null) {
+      toast.error("Enter all the fields before submit", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      
+      return false;
+    }
+  
+  const baseURL = "http://localhost:8080/saveuser";
+  const customConfig = {
+    headers: {
+    'Content-Type': 'application/json'
+    }
+};
+  const response =  axios.post(baseURL, JSON.stringify(formData),customConfig)
+  afterSubmit = (response.status === 200) ? true : false;
   };
 
-  const { name, email, password,language ,workExpYr} = formData;
+  const { name, email, password,language ,workExpYr,role,resume} = formData;
 
   return (
+    afterSubmit ?
+    <div className="Career">
+  <body>
+  <nav>
+            <div class="menu">
+                <div class="logo">
+                <a href="/">Portfolio</a>
+                </div>
+                <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/career">Career</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/login">Login</a></li>
+                </ul>
+            </div>
+            </nav>
+            <br></br><br></br><br></br><br></br><br></br>
+            <div className="form-control">
+	           <label> Submitted Successfully !</label><br/>
+             <p> Login to know the status of application</p>
+            </div>
+            </body>
+            </div> :
   <div className="Career">
   <body>
   <nav>
@@ -46,40 +94,39 @@ export default function Career(props) {
             <br></br><br></br><br></br><br></br><br></br>
     <form onSubmit={handleSubmit}>
      <div className="form-control">
-	 <label>
-        Name</label>
+	 
         <input
           type="text"
           name="name"
           value={name}
           onChange={handleChange}
+          placeholder="Name"
         />
     </div>
     <div className="form-control">
-      <label>
-        Email</label>
+      
         <input
           type="email"
           name="email"
           value={email}
           onChange={handleChange}
+          placeholder="Email"
         />
      </div>
      <div className="form-control">
-      <label>
-        Password</label>
+      
         <input
           type="password"
           name="password"
           value={password}
           onChange={handleChange}
+          placeholder="Password"
         />
     </div>
     <div className="form-control">
-    <label>
-        Language</label>
+   
         <select value={language} onChange={handleChange} name="language" style={{ width: '290px' }}>
-          <option value="">-- Select --</option>
+          <option value="">Select Language</option>
           <option value="Javascript">Javascript</option>
           <option value="Python">Python</option>
           <option value="Java">Java</option>
@@ -93,8 +140,7 @@ export default function Career(props) {
         </select>
   </div>
   <div className="form-control">
-      <label>
-        Years Of Work Experience</label>
+    
         <input
           type="number"
           min="0"
@@ -102,12 +148,34 @@ export default function Career(props) {
           name="workExpYr"
           value={workExpYr}
           onChange={handleChange}
+          placeholder="Years Of Work Experience"
         />
     </div>
+    <div className="form-control">
+      
+        <input
+          type="text"
+          name="role"
+          value={role}
+          onChange={handleChange}
+          placeholder="Current role and tech stack working on"
+        />
+     </div>
+     <div className="form-control">
+      <label>Upload Resume in pdf/doc/docx format</label>
+        <input
+          type="file"
+          name="resume"
+          value={resume}
+          onChange={handleChange}
+          accept=".doc,.docx,.pdf"
+        />
+     </div>
     <br></br>
     <div id="btn">
       <input type="submit" value="Submit"></input>
     </div>
+    <ToastContainer />
     </form>
   </body>
 </div>

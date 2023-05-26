@@ -57,6 +57,7 @@
             toast.error("No record found", {
               position: toast.POSITION.TOP_CENTER,
             });
+            return false;
           }
         
           const passDb = data[0].user_password;
@@ -129,7 +130,7 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/career">Career</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <li><a href="/login">Login</a></li>
+                        <li><a href="/login">Logout</a></li>
                         </ul>
                     </div>
                     </nav>

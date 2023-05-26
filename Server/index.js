@@ -90,6 +90,48 @@ app.get("/allusers", (req, res) => {
     });
   });
 
+  app.post("/saveuser",(req,res) =>{
+    console.log(req.body);
+  qry = "insert into ergo.ergophile_user_career_dtls  (name,email,password,language,workExpYr,role,resume)"
+    + "  values(?,?,?,?,?,?,?)";
+
+    value = [
+        req.body.name,
+        req.body.email,
+        req.body.password,
+        req.body.language,
+        req.body.workExpYr,
+        req.body.role,
+        req.body.resume
+    ];
+    db.query(qry,value,(err,data) => {
+
+        if(err) res.json(err);
+    });
+
+    qry = "insert into ergo.ergophile_user_login_info  (user_email,user_password)"
+    + "  values(?,?)";
+
+    value = [
+        req.body.email,
+        req.body.password,
+    ];
+    db.query(qry,value,(err,data) => {
+        if(err) res.json(err);
+        else return res.status(200);
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
 
   app.post("/adduser",(req,res) =>{
   qry = "insert into ergo.ergophile_user  (user_id,user_name,user_dateOfBirth,user_gender,user_email,"
