@@ -186,7 +186,7 @@
             <div id='forgot-btn'><span onClick={handlePassword}>Forgot password?</span></div>
               <ToastContainer />
             </form>
-          </body>
+           </body>
         </div>
           );
         }
