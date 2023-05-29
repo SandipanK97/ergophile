@@ -1,5 +1,5 @@
             import React,{ useState } from 'react';
-            
+            import Navbar from '../components/navbar.js'
             import axios from "axios";
             import "./styles.css";
 
@@ -38,23 +38,12 @@
                 return (
                     <div className="Home">
                     <body>
-                    <nav>
-                    <div className="menu">
-                        <div class="logo">
-                                <a href="/">Portfolio</a>
-                        </div>
-                                <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/career">Career</a></li>
-                                <li><a href="/contact">Contact</a></li>
-                                <li><a href="/login">Login</a></li>
-                                </ul>
-                    </div>
-                    </nav>
+                    <Navbar status='Login'/>
                     <br></br><br></br><br></br>
                     <table>
                         <tr>
-                        <th style={{width: '70%'}}><h3>Welcome</h3>
+                        <th style={{width: '70%'}}><img src="../images/myImg.jpg" alt="Profile" className="profile-photo"/>
+                        
                         </th>
                         <th style={{width: '30%'}}>
                         <div id="imgW"><img src={imageURL} alt="temp"/></div>

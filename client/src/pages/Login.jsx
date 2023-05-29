@@ -3,7 +3,7 @@
         import { ToastContainer, toast } from 'react-toastify';
         import 'react-toastify/dist/ReactToastify.css';
         import axios from "axios";
-        
+        import Navbar from '../components/navbar.js'
 
 
 
@@ -121,38 +121,14 @@
             afterLogin ? 
             <div className="Login">
           <body>
-          <nav>
-                    <div className="menu">
-                        <div class="logo">
-                        <a href="/">Portfolio</a>
-                        </div>
-                        <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/career">Career</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/login">Logout</a></li>
-                        </ul>
-                    </div>
-                    </nav>
+          <Navbar status='Logout'/>
                     <br></br><br></br><br></br><br></br><br></br>
                     <h1 style={{ color: 'white' }}>Welcome user</h1>
             </body>
             </div> :
           <div className="Login">
           <body>
-          <nav>
-                    <div className="menu">
-                        <div class="logo">
-                        <a href="/">Portfolio</a>
-                        </div>
-                        <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/career">Career</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/login">Login</a></li>
-                        </ul>
-                    </div>
-                    </nav>
+         <Navbar status='Login'/>
                     <br></br><br></br><br></br><br></br><br></br>
                     <br></br><br></br><br></br><br></br><br></br>
             <form onSubmit={handleSubmit}>

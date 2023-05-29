@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 import "./styles.css";
-
+import Navbar from '../components/navbar.js'
 export default function Career(props) {
   
   
@@ -58,19 +58,7 @@ export default function Career(props) {
     afterSubmit ?
     <div className="Career">
   <body>
-  <nav>
-            <div class="menu">
-                <div class="logo">
-                <a href="/">Portfolio</a>
-                </div>
-                <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/career">Career</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/login">Login</a></li>
-                </ul>
-            </div>
-            </nav>
+  <Navbar status='Login'/>
             <br></br><br></br><br></br><br></br><br></br>
             <center >
             <h1 style={{ color: 'white' }}>Submitted Successfully !</h1>
@@ -80,19 +68,7 @@ export default function Career(props) {
             </div> :
   <div className="Career">
   <body>
-  <nav>
-            <div class="menu">
-                <div class="logo">
-                <a href="/">Portfolio</a>
-                </div>
-                <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/career">Career</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/login">Login</a></li>
-                </ul>
-            </div>
-            </nav>
+  <Navbar status='Login'/>
             <br></br><br></br><br></br><br></br><br></br>
     <form onSubmit={handleSubmit}>
      <div className="form-control">

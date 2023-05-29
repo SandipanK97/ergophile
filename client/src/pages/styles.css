@@ -6,6 +6,8 @@
       font-family: 'Montserrat', sans-serif;
       font-weight: normal;
       background-image: url('./images/bodyImg.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       }
       table,footer{
         color: white;
@@ -189,4 +191,9 @@
         margin: auto;
         color: white;
       }
-      
+      .profile-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
