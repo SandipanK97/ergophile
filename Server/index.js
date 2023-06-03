@@ -35,7 +35,7 @@ app.get("/allusers", (req, res) => {
 
 
   app.get("/loginProcessing/:id", (req, res) => {
-    qry= "select t.user_password from ergo.ergophile_user_login_info t where t.user_email = ?";
+    qry= "select t.user_password,t.user_status from ergo.ergophile_user_login_info t where t.user_email = ?";
     value = req.params.id;
       db.query(qry,value,(err,data) => {
           if(err) res.json(err);

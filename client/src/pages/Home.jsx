@@ -112,8 +112,8 @@
                                 multiple submission at one click which reduces client’s time 1/n, where n is 
                                 the no. of transaction using Struts,JSP,Javascript,JDBC, JQuery,SQL,Java sms library,
                                 </li>
-                                <li>done automation in email containing excel sheet to trigger at a particular day in month
-                                 using Java mail API, JXL APIfor excel sheet generation,JDBC,sql,cronjob or quartz .These 
+                                <li>done automation in email containing excel sheet/pdf to trigger at a particular day in month
+                                 using Java mail API, JXL/itextPdf API for file generation,JDBC,sql,cronjob or quartz .These 
                                  generated excels are sent to different offices mail ids at one process,
                                  </li>
                                 <li>verification of existing policy number from portal,matching with database and 

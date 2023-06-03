@@ -15,9 +15,10 @@
             email: '',
             password: ''
           });
-
-
-         const handleChange = (e) => {
+          const [userStatus, setStatus] = useState("");
+          const [boxColor, setColor] = useState();
+         
+          const handleChange = (e) => {
             const { name, value } = e.target;
             setFormData((prevFormData) => ({
               ...prevFormData,
@@ -56,8 +57,14 @@
             });
             return false;
           }
-        
+          
           const passDb = data[0].user_password;
+
+          if(data[0].user_status ==='A') {setColor(true); setStatus('Accepted');}
+          else if(data[0].user_status ==='R') {setColor(false); setStatus('Rejected');}
+          
+
+          
 
           if (password !== passDb) {
             toast.error("Password does not match", {
@@ -120,7 +127,20 @@
           <body>
           <Navbar status='Logout'/>
                     <br></br><br></br><br></br><br></br><br></br>
-                    <h1 style={{ color: 'white' }}>Welcome user</h1>
+                    <center  style={{ color: 'white' }}>
+                     <h1>Welcome user</h1>
+                     <br></br>
+                     <p>Your Application Status</p>
+                     {boxColor?
+                     <input type='text' value={userStatus} 
+                     style={{color : 'black',textAlign:'center',fontWeight:'bolder',backgroundColor:'#b7f5a6'}} placeholder='Pending' readOnly/> :
+                     <input type='text' value={userStatus} 
+                     style={{color : 'black',textAlign:'center',fontWeight:'bolder',backgroundColor:'#f5aca6'}} placeholder='Pending' readOnly/>}
+                    <br></br><br></br>
+                    <p>Kindly check for the status later if showing 'Pending'</p>
+                    
+                    </center>
+                    
             </body>
             </div> :
           <div className="Login">
