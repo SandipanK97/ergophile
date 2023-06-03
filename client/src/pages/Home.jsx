@@ -1,5 +1,6 @@
             import React,{ useState } from 'react';
-            import Navbar from '../components/navbar.js'
+            import Navbar from '../components/navbar.js';
+            import Footer from '../components/footer.js';
             import axios from "axios";
             import "./styles.css";
 
@@ -18,7 +19,7 @@
             //       .then((res) => res.json())
             //       .then((data) => setMessage(data.message));
             //   }, []);
-        
+            
             navigator.geolocation.getCurrentPosition((position)=> {
                 const p=position.coords;
                 const latitude = p.latitude;
@@ -32,24 +33,25 @@
                     setIcon(res.data.current.weather[0].icon);
                     setImageURL("https://openweathermap.org/img/wn/"+icon+"@2x.png");
                 });
-        
             });
-        
                 return (
                     <div className="Home">
                     <body>
                     <Navbar status='Login'/>
-                    <br></br><br></br><br></br>
+                    <br></br><br></br><br></br><br></br>
+                    <div className='home-table'>
                     <table>
                         <tr>
-                        <th style={{width: '70%'}}><img src="../images/myImg.jpg" alt="Profile" className="profile-photo"/>
                         
+                        <th style={{width: '70%'}}><img src="../images/myImg.jpg" alt="Profile" className="profile-photo"/>
                         </th>
+
                         <th style={{width: '30%'}}>
                         <div id="imgW"><img src={imageURL} alt="temp"/></div>
                         <div className="sub_title" id="desc" >{weatherDescription}</div>
                         <div className="sub_title" id="temp" >{temp}</div>
                         </th>
+
                         </tr>
 
                         <tr>
@@ -139,11 +141,10 @@
                         </td>
                         </tr>
                     </table>
+                    </div>
                     <br></br><br></br><br></br><br></br><br></br>
-
-                    <center><footer style={{backgroundColor:'white',color:'#000048'}}>Developed & Maintain  by  Ergophile © 2023</footer></center>
-                  
-                  </body>
+                     <Footer />
+                     </body>
                  </div>       
           );
         }

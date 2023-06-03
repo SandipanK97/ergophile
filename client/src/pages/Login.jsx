@@ -3,11 +3,8 @@
         import { ToastContainer, toast } from 'react-toastify';
         import 'react-toastify/dist/ReactToastify.css';
         import axios from "axios";
-        import Navbar from '../components/navbar.js'
-
-
-
-
+        import Navbar from '../components/navbar.js';
+       
 
         export default function Login(props) {
 
@@ -162,6 +159,7 @@
             <div id='forgot-btn'><span onClick={handlePassword}>Forgot password?</span></div>
               <ToastContainer />
             </form>
+            
            </body>
         </div>
           );

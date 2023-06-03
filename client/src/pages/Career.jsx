@@ -3,7 +3,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 import "./styles.css";
-import Navbar from '../components/navbar.js'
+import Navbar from '../components/navbar.js';
+
 export default function Career(props) {
   
   
@@ -155,7 +156,7 @@ export default function Career(props) {
     </div>
     <ToastContainer />
     </form>
-    
+   
   </body>
 </div>
   );
