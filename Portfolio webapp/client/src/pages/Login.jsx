@@ -45,7 +45,7 @@
               return false;
             }
           
-          const baseURL = "http://localhost:8080/loginProcessing/"+email;
+          const baseURL = "http://localhost:8000/loginProcessing/"+email;
           try {
           const response = await axios.get(baseURL);
           const data = response.data;
@@ -93,7 +93,7 @@
             return false;
           }
 
-          const baseURL = "http://localhost:8080/mailProcessing/"+email;
+          const baseURL = "http://localhost:8000/mailProcessing/"+email;
           try {
           const response = await axios.get(baseURL);
           const data = response.data;
