@@ -8,6 +8,9 @@
 ![image](https://github.com/SandipanK97/ergophile/assets/121749065/7f6439b5-4588-40ea-b1a9-ec469bfb5578)
 ![image](https://github.com/SandipanK97/ergophile/assets/121749065/d80638f4-8fad-4eb6-8245-ff21698d16cb)
 
+# Strong Password Check API with Swagger enabled
+![image](https://github.com/SandipanK97/ergophile/assets/121749065/bec63025-ded9-49f7-b4bf-8e467e9f2d37)
+
 
 
 
