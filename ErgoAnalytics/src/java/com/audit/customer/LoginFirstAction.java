@@ -39,11 +39,16 @@ public class LoginFirstAction extends Action {
             String password = properties.getProperty("db.password");
             credential.put(username, password);
 
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","admin");
+            //Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","admin");
 
             session.setAttribute("db_credential", credential);
-            session.setAttribute("db_connection", conn);
-
+            //session.setAttribute("db_connection", conn);
+            int c=0;
+            if(c==0){
+                errors.add("error.generic",new ActionMessage("error.generic","Invalid user credential"));
+                saveErrors(request, errors);
+                return mapping.getInputForward();
+            }
         
 
         if (request.getParameter("submit") != null && request.getParameter("submit").trim().equalsIgnoreCase("Login")) {

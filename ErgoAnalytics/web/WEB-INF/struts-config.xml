@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 <struts-config>
+     <message-resources parameter="com.audit.customer.ApplicationResources" />
     <form-beans>
         <form-bean name="FormBean" type="com.audit.customer.FormBean" />
     </form-beans>
@@ -9,7 +10,8 @@
         <action path="/main" type="com.audit.customer.LoginFirstAction"
         	name="FormBean" 
             scope="request" 
-            validate="true">
+            validate="true"
+            input="/index.jsp">
             <forward name="success" path="/resources/main.jsp"  />
          </action>
        <action path="/account" type="com.audit.customer.LoginSecondAction"

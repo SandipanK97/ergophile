@@ -4,6 +4,6 @@
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 
-<ul> 
-    <font color="red"><html:errors></html:errors></font>
+<div style="font-family: Trebuchet MS ">
+    <font color="red"><html:errors/></font>
 </ul>
