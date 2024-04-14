@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="FormBean" type="com.audit.customer.FormBean" />
+    </form-beans>
+
+    <action-mappings>
+        <action path="/main" type="com.audit.customer.LoginFirstAction"
+        	name="FormBean" 
+            scope="request" 
+            validate="true">
+            <forward name="success" path="/resources/main.jsp"  />
+         </action>
+       <action path="/account" type="com.audit.customer.LoginSecondAction"
+        	name="FormBean"
+            scope="request" 
+            validate="true">
+            <forward name="success" path="/resources/account.jsp"  />
+         </action>
+        <action path="/transaction" type="com.audit.customer.LoginThirdAction"
+        	name="FormBean"
+            scope="request" 
+            validate="true">
+            <forward name="success" path="/resources/transaction.jsp"  />
+         </action>
+         <action path="/audit" type="com.audit.customer.LoginFourthAction"
+        	name="FormBean"
+            scope="request" 
+            validate="true">
+            <forward name="success" path="/resources/audit.jsp"  />
+         </action>
+         
+        <!-- Define other actions as needed -->
+    </action-mappings>
+
+    <!-- Global forwards or other configurations -->
+</struts-config>
