@@ -5,8 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,12 +20,13 @@ public class LoginFirstAction extends Action {
 
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response) throws Exception {
+            HttpServletRequest request, HttpServletResponse response) {
+        try{
         HttpSession session = request.getSession(true);
         FormBean bean = (FormBean) form;
         ActionErrors errors = new ActionErrors();
         Properties properties = new Properties();
-        Map<String, String> credential = new HashMap<>();
+        
         
         String filePath = "C:\\Project\\ergophile/file.properties";
 
@@ -37,23 +36,25 @@ public class LoginFirstAction extends Action {
 
             String username = properties.getProperty("db.username");
             String password = properties.getProperty("db.password");
-            credential.put(username, password);
+            String connectstr = properties.getProperty("db.connectstr");
+            
+            
+            Class.forName("org.postgresql.Driver");  
+            Connection conn = DriverManager.getConnection(connectstr,username,password);
 
-            //Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","admin");
-
-            session.setAttribute("db_credential", credential);
-            //session.setAttribute("db_connection", conn);
-            int c=0;
-            if(c==0){
-                errors.add("error.generic",new ActionMessage("error.generic","Invalid user credential"));
+            session.setAttribute("user", request.getParameter("username"));
+            session.setAttribute("db_connection", conn);
+            
+            if(conn==null){
+                errors.add("error.generic",new ActionMessage("error.generic","database connection failed"));
                 saveErrors(request, errors);
                 return mapping.getInputForward();
             }
         
 
         if (request.getParameter("submit") != null && request.getParameter("submit").trim().equalsIgnoreCase("Login")) {
-
-            String qry = "select count(1) from USER_LOGIN t where t.user_id=? and t.user_password=? and t.user_status='A'";
+            
+            String qry = "select count(1) from USER_LOGIN t where t.username=? and t.password_hash=? and t.user_status='A'";
             Connection con = (Connection) session.getAttribute("db_connection");
             PreparedStatement p = con.prepareStatement(qry);
             p.setString(1, request.getParameter("username"));
@@ -62,11 +63,16 @@ public class LoginFirstAction extends Action {
             rs.next();
             int count = rs.getInt(1);
             if (count == 0) {
-                errors.add("login", new ActionMessage("invalid user credential"));
+                errors.add("error.generic", new ActionMessage("error.generic","Invalid user credential"));
                 saveErrors(request, errors);
                 return mapping.getInputForward();
             }
         }
+        
+        
+        }catch(Exception e){
+            e.printStackTrace();
+       }
         return mapping.findForward("success");
     }
 

@@ -1,3 +1,4 @@
+<%@ page language="java" %>
 <%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
@@ -5,6 +6,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ page import = "java.io.*,java.util.*, javax.servlet.*" %>
+<%@ page import="javax.servlet.http.HttpSession" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +15,26 @@
     <title>Core Banking</title>
     <link rel="stylesheet" href="main.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      
+    <script type="text/javascript">
+       
+        function showSessionExpiryAlert() {
+            alert("Your session has expired. Please log in again.");
+            window.location.href = "<%= request.getContextPath() %>";
+        }
+
+      
+        function startSessionExpiryTimer() {
+            <%--<%= session.getMaxInactiveInterval() %>  1800--%>
+            setTimeout(showSessionExpiryAlert, 600000);
+        }
+        
+       
+        window.onload = function() {
+            startSessionExpiryTimer();
+        };
+       
+     </script>
 </head>
 <body>
 
@@ -23,7 +45,7 @@
     <marquee scrolldelay="170"><span style="font-size: 12px; color: #cc0052; font-family: 'Arial Black', sans-serif;">
     Welcome to Ergophile Official Portal for Online Core Banking Solutions. Ergophile Reserves the Copyright of this site. Kindly email us for support issues at support@ergophile.com
     </span></marquee>  
-    <p id="heading">&nbsp &nbsp Universal Banking Solution <span id ="span" style="margin-left:55%;"><% out.print("admin");%> | <% out.print(date.toLocaleString());%></span>&nbsp;&nbsp;<button class="btn" id="logout">logout</button></p>
+    <p id="heading">&nbsp &nbsp Universal Banking Solution <span id ="span" style="margin-left:45%;">welcome &nbsp;<i><%=session.getAttribute("user")%></i>  | <% out.print(date.toLocaleString());%></span>&nbsp;&nbsp;<button class="btn" onclick="window.location.href = '<%= request.getContextPath() %>'">logout</button></p>
        
        
        <table>
