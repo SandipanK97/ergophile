@@ -14,6 +14,15 @@
             input="/index.jsp">
             <forward name="success" path="/resources/main.jsp"  />
          </action>
+         
+         <action path="/custDtls" type="com.audit.customer.CustomerDtlsAction"
+        	name="FormBean" 
+            scope="request" 
+            validate="true">
+            <forward name="success" path="/resources/main.jsp"  />
+         </action>
+         
+         
        <action path="/account" type="com.audit.customer.LoginSecondAction"
         	name="FormBean"
             scope="request" 

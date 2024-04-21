@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Properties;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,8 +21,8 @@ public class LoginFirstAction extends Action {
 
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response) {
-        try{
+            HttpServletRequest request, HttpServletResponse response) throws Exception {
+        
         HttpSession session = request.getSession(true);
         FormBean bean = (FormBean) form;
         ActionErrors errors = new ActionErrors();
@@ -70,9 +71,6 @@ public class LoginFirstAction extends Action {
         }
         
         
-        }catch(Exception e){
-            e.printStackTrace();
-       }
         return mapping.findForward("success");
     }
 

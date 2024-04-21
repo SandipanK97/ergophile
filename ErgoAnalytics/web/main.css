@@ -1,125 +1,148 @@
-		body {
-            font-family: Arial;
-            background-color: #f7f7f7;
-            padding: 10px;
-           }
+body {
+    font-family: Arial;
+    background-color: #f7f7f7;
+    padding: 10px;
+}
 
-        h1 {
-            text-align: center;
-            color: #4285f4;
-        }
+h1 {
+    text-align: center;
+    color: #4285f4;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border: 1px solid #ccc;
-           
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
 
-        th{
-            padding: 6px;
-            text-align: left;
-            width: 220px;
-            font-weight:bold;
-    		font-size: 11px;
-    		color: black;
-    		font-style: normal;
-    		font-family: Arial;
-    		
-        }
-        td{
-            padding: 2px;
-            width: 220px;
-            font-weight:bold;
-    		font-size: 11px;
-    		color: black;
-    		font-style: normal;
-    		font-family: Arial;
-    	}
-		input{
-		width:60%;
-		
-		}
-       
+}
 
-        tr:nth-child(even),p {
-            background-color: #f2f2f2;
-        }
+th{
+    padding: 6px;
+    text-align: left;
+    width: 220px;
+    font-weight:bold;
+    font-size: 11px;
+    color: black;
+    font-style: normal;
+    font-family: Arial;
 
-        
+}
+td{
+    padding: 2px;
+    width: 220px;
+    font-weight:bold;
+    font-size: 11px;
+    color: black;
+    font-style: normal;
+    font-family: Arial;
+}
+input{
+    width:60%;
 
-        .customer-info {
-            margin-top: 4px;
-            margin-left: 50px;
-            margin-right: 50px;
-            padding: 10px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-        }
-		#search:hover{
-			width:5%;
-		  	
-		}
-		#heading{
-			background-color: #f2f2f2;
-			padding: 6px;
-            text-align: left;
-            font-weight:bold;
-    		font-size: 12px;
-    		color: black;
-    		font-style: normal;
-    		font-family: Arial;
-    		letter-spacing: 2px;
-    		border: 2px solid #ccc;
-    		border-radius: 3px;
-		}
-		h1{
-			padding: 4px;
-            text-align: left;
-            font-weight:normal;
-    		color: black;
-    		font-style: normal;
-    		font-family: Arial;
-    		
-    	}
-    	#navbar {
-			background-color: #f2f2f2;
-			border: 2px solid #ccc;
-    		border-radius: 3px;
-    		font-weight:bold;
-    		font-size: 12px;
-    		color: black;
-    		font-style: normal;
-    		font-family: Arial;
-    		display: flex;
-  			justify-content: center;
-		}
-		a{
-			padding: 0 40px;
-		}
-		footer{
-			float: none;
-           font-weight:bold;
-    		font-size: 12px;
-    		color: #808080;
-    		font-style: normal;
-    		font-family: Arial;
-    		text-align: center;
-    		
-    	}
-    	.btn{
-			
-			font-weight:bold;
-    		font-size: 12px;
-    		font-style: normal;
-    		font-family: Arial;
-    		text-align: center;
-		}
-		.myfont{
-			font-weight:bold;
-    		font-size: 10px;
-    		color: darkblue;
-    		font-style: normal;
-    		font-family: Arial;
-		}
+}
+
+input[type=submit] {
+    background-color: #cc0066;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width:10%;
+}
+input[type="submit"]:hover {
+   opacity: 80%;
+}
+
+tr:nth-child(even),p {
+    background-color: #f2f2f2;
+}
+
+
+
+.customer-info {
+    margin-top: 4px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+#search:hover{
+    width:5%;
+
+}
+#heading{
+    background-color: #f2f2f2;
+    padding: 6px;
+    text-align: left;
+    font-weight:bold;
+    font-size: 12px;
+    color: black;
+    font-style: normal;
+    font-family: Arial;
+    letter-spacing: 2px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+}
+h1{
+    padding: 4px;
+    text-align: left;
+    font-weight:normal;
+    color: black;
+    font-style: normal;
+    font-family: Arial;
+
+}
+#navbar {
+    background-color: #f2f2f2;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    font-weight:bold;
+    font-size: 12px;
+    color: black;
+    font-style: normal;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+}
+a{
+    padding: 0 40px;
+}
+footer{
+    float: none;
+    font-weight:bold;
+    font-size: 12px;
+    color: #808080;
+    font-style: normal;
+    font-family: Arial;
+    text-align: center;
+
+}
+.btn{
+
+    font-weight:bold;
+    font-size: 12px;
+    font-style: normal;
+    font-family: Arial;
+    text-align: center;
+}
+
+#err{
+
+    font-weight:bold;
+    font-size: 13.5px;
+    font-style: normal;
+    font-family: Arial;
+    text-align: center;
+    
+ }
+
+.myfont{
+    font-weight:bold;
+    font-size: 10px;
+    color: darkblue;
+    font-style: normal;
+    font-family: Arial;
+}

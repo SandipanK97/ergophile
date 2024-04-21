@@ -9,7 +9,8 @@ public class FormBean extends ActionForm {
     private String password = "";
     private String isSubmit = "";
     private String custId = "";
-    private String name = "";
+    
+    private String name = "hk";
     private String fname = "";
     private String mname = "";
     private String lname = "";
@@ -23,6 +24,7 @@ public class FormBean extends ActionForm {
     private String panNo = "";
     private String isEkycDone = "";
     private String passportNo = "";
+    
     private String accountNo = "";
     private String ifscCd = "";
     private String branch = "";
