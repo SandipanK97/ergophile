@@ -44,7 +44,7 @@
     
     <h1>&nbsp <font color="#cc0066">Er</font>goph<font color="#cc0066">i</font>le</h1>
     <marquee scrolldelay="170"><span style="font-size: 12px; color: #cc0052; font-family: 'Arial Black', sans-serif;">
-    Welcome to Ergophile Official Portal for Online Core Banking Solutions. Ergophile Reserves the Copyright of this site. Kindly email us for support issues at support@ergophile.com
+    Welcome to Ergophile Official Portal for Online Core Banking Solutions. Sandipan Kundu(Owner) Reserves the Copyright of this site. Kindly email us for support issues at support@ergophile.com
     </span></marquee>  
     <p id="heading">&nbsp &nbsp Universal Banking Solution <span id ="span" style="margin-left:45%;">welcome &nbsp;<i><%=session.getAttribute("user")%></i>  | <% out.print(date.toLocaleString());%></span>&nbsp;&nbsp;<button class="btn" onclick="window.location.href = '<%= request.getContextPath() %>'">logout</button></p>
        

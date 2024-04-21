@@ -10,7 +10,7 @@ public class FormBean extends ActionForm {
     private String isSubmit = "";
     private String custId = "";
     
-    private String name = "hk";
+    private String name = "";
     private String fname = "";
     private String mname = "";
     private String lname = "";

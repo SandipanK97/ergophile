@@ -28,7 +28,7 @@ public class CustomerDtlsAction extends Action {
         ActionErrors errors = new ActionErrors();
         
         bean.setName("Bhajahari");
-        errors.add("error.generic", new ActionMessage("error.generic","updated successfully"));
+        errors.add("error.generic", new ActionMessage("error.generic","Successfully Updated"));
         saveErrors(request, errors);
         return mapping.findForward("success");
     }
