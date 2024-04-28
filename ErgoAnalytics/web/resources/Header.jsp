@@ -7,6 +7,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ page import = "java.io.*,java.util.*, javax.servlet.*" %>
 <%@ page import="javax.servlet.http.HttpSession" %>
+<%@ page import="com.audit.customer.FormBean" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,13 +53,13 @@
        <table>
        <tr>
        <td></td>
-         <td>A/c.ID<span><font color="red">*</font></span> &nbsp &nbsp<input type="text" name="accountNo" id="accountNo"/>
+       <td>A/c.ID<span><font color="red">*</font></span> &nbsp &nbsp<html:text property="accountNo" styleId="accountNo" name="FormBean"></html:text>
          <svg id="search" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   		 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 		 </svg>
          </td>
          <td ></td>
-         <td>Cust.Id<span><font color="red">*</font></span> &nbsp &nbsp<input type="text" name="custId" id="custId"/>
+         <td>Cust.Id<span><font color="red">*</font></span> &nbsp &nbsp<html:text property="custId" styleId="custId" name="FormBean"></html:text>
          <svg id="search" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   		 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 		 </svg>

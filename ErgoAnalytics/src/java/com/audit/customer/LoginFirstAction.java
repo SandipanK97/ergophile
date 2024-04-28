@@ -70,7 +70,7 @@ public class LoginFirstAction extends Action {
             }
         }
         
-        
+        form.reset(mapping, request);
         return mapping.findForward("success");
     }
 
