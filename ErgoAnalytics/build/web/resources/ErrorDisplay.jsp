@@ -5,5 +5,5 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 
 <div id="err">
-    <font color="red"><html:errors/></font>
+    <font color="#cc0066"><html:errors/></font>
 </ul>

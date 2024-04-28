@@ -19,7 +19,7 @@
             <form action="main.do" method="POST">
                 
                 <h2>ergoAnalytics</h2>
-                <div style="font-family: Trebuchet MS "><font color="red"><html:errors></html:errors></font></div>
+                <div id="err"><font color="#cc0066"><html:errors></html:errors></font></div>
                 <br>
                 <div class="form-group">
                     <input type="text" id="username" name="username" placeholder="UserId" required>
