@@ -41,9 +41,10 @@ public class CustomerDtlsAction extends Action {
         try {
 
             if (request.getParameter("id") != null) {
-                String qry = "SELECT * FROM CUST_DTLS WHERE cust_id=?";
+                String qry = "SELECT * FROM CUST_DTLS WHERE cust_id=? OR accountno=?";
                 PreparedStatement p = con.prepareStatement(qry);
-                p.setInt(1, Integer.parseInt(request.getParameter("id")));
+                p.setLong(1, Long.parseLong(request.getParameter("id")));
+                p.setString(2, request.getParameter("id"));
                 ResultSet rs = p.executeQuery();
                 while (rs.next()) {
                     bean.setCustId(rs.getString("cust_id"));
@@ -61,6 +62,7 @@ public class CustomerDtlsAction extends Action {
                     bean.setPanNo(rs.getString("panNo"));
                     bean.setIsEkycDone(rs.getString("isEkycDone"));
                     bean.setPassportNo(rs.getString("passportNo"));
+                    bean.setAccountNo(rs.getString("accountno"));
                 }
 
             }

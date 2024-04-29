@@ -118,7 +118,7 @@
         });
         
         function Submit(){
-           var id=document.getElementById('accountNo').value || document.getElementById('custId').value;
+           var id= document.getElementById('custId').value;
             var form = document.forms[0];
             form.action="custDtls.do?updateById="+id;
             form.method='POST';

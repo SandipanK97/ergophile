@@ -37,6 +37,7 @@ public class FormBean extends ActionForm {
     private String loanAmt = "";
     private String roi = "";
     private String tenure = "";
+    
     private String modeOfTransaction = "";
     private String amtOfTransaction = "";
     private String transactionType = "";

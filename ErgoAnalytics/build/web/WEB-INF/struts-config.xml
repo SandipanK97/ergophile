@@ -23,18 +23,22 @@
          </action>
          
          
-       <action path="/account" type="com.audit.customer.LoginSecondAction"
+       <action path="/account" type="com.audit.customer.AccountDtlsAction"
         	name="FormBean"
             scope="request" 
             validate="true">
             <forward name="success" path="/resources/account.jsp"  />
          </action>
-        <action path="/transaction" type="com.audit.customer.LoginThirdAction"
+         
+         
+        <action path="/transaction" type="com.audit.customer.TransactionDtlsAction"
         	name="FormBean"
             scope="request" 
             validate="true">
             <forward name="success" path="/resources/transaction.jsp"  />
          </action>
+         
+         
          <action path="/audit" type="com.audit.customer.LoginFourthAction"
         	name="FormBean"
             scope="request" 

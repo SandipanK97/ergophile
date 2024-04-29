@@ -45,15 +45,15 @@
     
     <h1>&nbsp <font color="#cc0066">Er</font>goph<font color="#cc0066">i</font>le</h1>
     <marquee scrolldelay="170"><span style="font-size: 12px; color: #cc0052; font-family: 'Arial Black', sans-serif;">
-    Welcome to Ergophile Official Portal for Online Core Banking Solutions. Sandipan Kundu(Owner) Reserves the Copyright of this site. Kindly email us for support issues at support@ergophile.com
+    Welcome to Ergophile Official Portal for Online Core Banking Solutions. Sandipan Kundu(owner) Reserves the Copyright of this site. Kindly email us for support issues at support@ergophile.com
     </span></marquee>  
-    <p id="heading">&nbsp &nbsp Universal Banking Solution <span id ="span" style="margin-left:45%;">welcome &nbsp;<i><%=session.getAttribute("user")%></i>  | <% out.print(date.toLocaleString());%></span>&nbsp;&nbsp;<button class="btn" onclick="window.location.href = '<%= request.getContextPath() %>'">logout</button></p>
+    <p id="heading">&nbsp &nbsp Universal Banking Solution <span id ="span" style="margin-left:45%;">welcome &nbsp;<i><font color="#cc0066"><%=session.getAttribute("user")%></font></i>  | <% out.print(date.toLocaleString());%></span>&nbsp;&nbsp;<button class="btn" onclick="window.location.href = '<%= request.getContextPath() %>'">logout</button></p>
        
        
        <table>
        <tr>
        <td></td>
-       <td>A/c.ID<span><font color="red">*</font></span> &nbsp &nbsp<html:text property="accountNo" styleId="accountNo" name="FormBean"></html:text>
+       <td>A/c.ID<span><font color="red">*</font></span> &nbsp &nbsp<html:text property="accountNo"  styleId="accountNo" name="FormBean"></html:text>
          <svg id="search" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   		 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 		 </svg>

@@ -1,65 +1,80 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ page import="java.io.*,java.util.*, javax.servlet.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import = "java.io.*,java.util.*, javax.servlet.*" %>
+<%@ page import="com.audit.customer.FormBean" %>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 
 <jsp:include page="./Header.jsp" flush="true" />
 <jsp:include page="./Navbar.jsp" flush="true" />
+<html:form  method="POST">
 <table>
     <tr>
         <th>A/c.no</th>
-        <td><input type="text" name="accountNo" id="accountNo2"disabled></td>
+        <td><html:text property="accountNo" name="FormBean"  disabled="true"></html:text></td>
         <th>IFSC code</th>
-        <td><input type="text" name="ifscCd" id="ifscCd"></td>
+        <td><html:text property="ifscCd" name="FormBean" styleId="ifscCd"></html:text></td>
     </tr>
     <tr>
         <th>Branch</th>
-        <td><input type="text" name="branch" id="branch"></td>
+        <td><html:text property="branch" name="FormBean" styleId="branch"></html:text></td>
         <th>Location</th>
-        <td><input type="text" name="location" id="location"></td>
+        <td><html:text property="location" name="FormBean" styleId="location"></html:text></td>
     </tr>
     <tr>
         <th>Type of A/c.</th>
-        <td><select id="accountType" name="accountType">
-                <option value="Savings">SB</option>
-                <option value="Current">CA</option>
-                <option value="Fixed_deposit">FD</option>
-                <option value="Recurring_deposit">RD</option>
-            </select></td>
+        <td><html:select styleId="accountType" property="accountType" name="FormBean">
+                <html:option value="Savings">SB</html:option>
+                <html:option value="Current">CA</html:option>
+                <html:option value="Fixed_deposit">FD</html:option>
+                <html:option value="Recurring_deposit">RD</html:option>
+            </html:select></td>
         <th>Status</th>
-        <td><input type="text" name="status" id="status"></td>
+        <td><html:text property="status" name="FormBean" styleId="status" disabled="true"></html:text></td>
     </tr>
     <tr>
         <th>AOD</th>
-        <td><input type="date" name="aod" id="aod"></td>
+        <td><html:text property="aod" name="FormBean" styleId="aod"></html:text></td>
         <th>Opening Balance</th>
-        <td><input type="text" name="openingBalance"
-                   id="openingBalance"></td>
+        <td><html:text property="openingBalance" name="FormBean" styleId="openingBalance"></html:text></td>
     </tr>
     <tr>
         <th>Loan A/c.no</th>
-        <td><input type="text" name="loanAccountNo" id="loanAccountNo"></td>
+        <td><html:text property="loanAccountNo" name="FormBean" styleId="loanAccountNo"></html:text></td>
         <th>Loan Amt.</th>
-        <td><input type="number" name="loanAmt" id="loanAmt"
-                   placeholder="INR"></td>
+        <td><html:text property="loanAmt" name="FormBean" styleId="loanAmt"></html:text></td>
     </tr>
     <tr>
         <th>ROI</th>
-        <td><input type="number" name="roi" id="roi" ></td>
+        <td><html:text property="roi" name="FormBean" styleId="roi" ></html:text></td>
         <th>Tenure</th>
-        <td><input type="number" name="tenure" id="tenure" ></td>
+        <td><html:text property="tenure" name="FormBean" styleId="tenure" ></html:text></td>
     </tr>
 
 </table>
-</table>
-<br>
-<br> &nbsp &nbsp
-<button class="btn" id="create">Add</button>
-&nbsp &nbsp
-<button class="btn" id="read">View</button>
-&nbsp &nbsp
-<button class="btn" id="update">Update</button>
-&nbsp &nbsp
-<button class="btn" id="delete">Delete</button>
-&nbsp &nbsp <span class="btn" id="message"></span> <br>
+
+    <br><br>
+    
+    <input type="button" class="btn" onclick="Submit();" value="Update"></input>
+</html:form>
+ 
+<script type="text/javascript">
+    
+         $('#accountNo, #custId').change(function() {
+            var id=document.getElementById('accountNo').value || document.getElementById('custId').value;
+            var form = document.forms[0];
+            form.action="account.do?id="+id;
+            form.submit();
+            
+        });
+        
+        function Submit(){
+           var id= document.getElementById('custId').value;
+            var form = document.forms[0];
+            form.action="account.do?updateById="+id;
+            form.method='POST';
+            form.submit();
+        }
+</script>
 
 <jsp:include page="./Footer.jsp" flush="true" />

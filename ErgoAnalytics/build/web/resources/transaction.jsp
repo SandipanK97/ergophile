@@ -1,46 +1,51 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import = "java.io.*,java.util.*, javax.servlet.*" %>
+<%@ page import="com.audit.customer.FormBean" %>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 
 <jsp:include page="./Header.jsp" flush="true" />
 <jsp:include page="./Navbar.jsp" flush="true" />
+<html:form  method="POST">
 <table>
     <tr>
         <th>Mode of transaction</th>
         <td>
-            <select id="modeOfTransaction" name="modeOfTransaction">
-                <option value="">select</option>
-                <option value="cash">Cash</option>
-                <option value="cheque">Cheque</option>
-                <option value="credit_card">Credit Card</option>
-                <option value="debit_card">Debit Card</option>
-                <option value="UPI">UPI</option>
-            </select>
+            <html:select styleId="modeOfTransaction" property="modeOfTransaction" name="FormBean">
+                <html:option value="">select</html:option>
+                <html:option value="cash">Cash</html:option>
+                <html:option value="cheque">Cheque</html:option>
+                <html:option value="credit_card">Credit Card</html:option>
+                <html:option value="debit_card">Debit Card</html:option>
+                <html:option value="UPI">UPI</html:option>
+            </html:select>
         </td>
         <th>Amt.</th>
-        <td><input type="text" name="amtOfTransaction" id="amtOfTransaction" placeholder="INR"></td>
+        <td><html:text property="amtOfTransaction" name="FormBean" styleId="amtOfTransaction" ></html:text></td>
     </tr>
     <tr>
         <th>Transaction type</th>
 
         <td>
-            <select id="transactionType" name="transactionType">
-                <option value="">select</option>
-                <option value="CREDIT">deposit</option>
-                <option value="DEBIT">withdrawal</option>
-            </select>
+            <html:select styleId="transactionType" property="transactionType" name="FormBean">
+                <html:option value="">select</html:option>
+                <html:option value="CREDIT">deposit</html:option>
+                <html:option value="DEBIT">withdrawal</html:option>
+            </html:select>
         </td>
 
 
         <th>DOT</th>
-        <td><input type="date" name="dot" id="dot"></td>
+        <td><html:text  property="dot" styleId="dot"  name="FormBean"></html:text></td>
     </tr>
     <tr></tr>
 </table>
-<br>
+<br><br>
+<input type="button" class="btn" onclick="Submit();" value="Update"></input>
+<br><br>
 
-
-
-<table id="transactionTable">
+<table>
     <thead>
         <tr>
             <th>Transaction no.</th>
@@ -56,14 +61,25 @@
         <!-- Table Data to be populated through AJAX call -->
     </tbody>
 </table>
-<input type="hidden" id="balance" name="balance"/>
-<br>
-<br> &nbsp &nbsp
-<button class="btn" id="statement">Statement</button>
-&nbsp &nbsp
-<button class="btn" id="read">View</button>
-&nbsp &nbsp
-<button class="btn" id="create">Update</button>
-&nbsp &nbsp <span class="btn" id="message"></span> <br>
+
+</html:form>
+<script type="text/javascript">
+    
+         $('#accountNo, #custId').change(function() {
+            var id=document.getElementById('accountNo').value || document.getElementById('custId').value;
+            var form = document.forms[0];
+            form.action="transaction.do?id="+id;
+            form.submit();
+            
+        });
+        
+        function Submit(){
+           var id= document.getElementById('custId').value;
+            var form = document.forms[0];
+            form.action="transaction.do?updateById="+id;
+            form.method='POST';
+            form.submit();
+        }
+</script>
 
 <jsp:include page="./Footer.jsp" flush="true" />
