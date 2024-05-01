@@ -39,7 +39,7 @@
          </action>
          
          
-         <action path="/audit" type="com.audit.customer.LoginFourthAction"
+         <action path="/audit" type="com.audit.customer.dataAnalytics.AnalyticsAction"
         	name="FormBean"
             scope="request" 
             validate="true">

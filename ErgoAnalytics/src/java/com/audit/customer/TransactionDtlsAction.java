@@ -11,6 +11,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -39,25 +42,31 @@ public class TransactionDtlsAction extends Action {
         try {
 
             if (request.getParameter("id") != null) {
-                String qry = "SELECT * FROM TRAN_DTLS WHERE accountNo=? OR cust_id =?";
+
+                String qry = "SELECT * FROM TRAN_DTLS WHERE accountNo=? OR cust_id =? order by updateno desc LIMIT 1";
                 PreparedStatement p = con.prepareStatement(qry);
                 p.setString(1, request.getParameter("id"));
                 p.setLong(2, Long.parseLong(request.getParameter("id")));
                 ResultSet rs = p.executeQuery();
+                List<FormBean> resultList = new ArrayList<>();
                 while (rs.next()) {
                     bean.setAccountNo(rs.getString("accountNo"));
-                    bean.setModeOfTransaction(rs.getString("modeOfTransaction"));
-                    bean.setAmtOfTransaction(rs.getString("amtOfTransaction"));
-                    bean.setTransactionType(rs.getString("transactionType"));
-                    bean.setDot(sdf.format(rs.getDate("dot")));
-                    bean.setTransactionNo(rs.getString("transactionNo"));
+                    bean.setMot(rs.getString("modeOfTransaction"));
+                    bean.setAmt(rs.getString("amtOfTransaction"));
+                    bean.setCrdbt(rs.getString("transactionType"));
+                    bean.setTransDate(sdf.format(rs.getDate("dot")));
+                    bean.setTransNo(rs.getString("transactionNo"));
                     bean.setBalance(rs.getString("balance"));
                     bean.setCustId(rs.getString("cust_id"));
+                    bean.setUpdateNo(rs.getInt("updateno"));
+                    resultList.add(bean);
                 }
+                bean.setList(resultList);
             }
 
             if (request.getParameter("updateById") != null) {
-                String updateQuery = "UPDATE TRAN_DTLS SET modeOfTransaction=?, amtOfTransaction=?, transactionType=?, dot=?, transactionNo=?, balance=? WHERE accountNo=?";
+
+                String updateQuery = "INSERT INTO TRAN_DTLS (modeOfTransaction, amtOfTransaction, transactionType, dot, transactionNo, balance,cust_id,accountno) VALUES (?,?,?,?,?,?,?,?)";
                 PreparedStatement p = con.prepareStatement(updateQuery);
                 p.setString(1, bean.getModeOfTransaction());
                 p.setDouble(2, Double.parseDouble(bean.getAmtOfTransaction()));
@@ -65,9 +74,33 @@ public class TransactionDtlsAction extends Action {
                 java.util.Date utilDate = sdf.parse(bean.getDot());
                 Date sqlDate = new Date(utilDate.getTime());
                 p.setDate(4, sqlDate);
-                p.setString(5, bean.getTransactionNo());
-                p.setDouble(6, Double.parseDouble(bean.getBalance()));
-                p.setString(7, request.getParameter("updateById"));
+                int randomNumber = new Random().nextInt(9000) + 1000;
+                p.setString(5, "ERG".concat(String.valueOf(randomNumber)));
+
+                String qr = "select balance from TRAN_DTLS WHERE cust_id =? order by updateno desc limit 1";
+                PreparedStatement ps = con.prepareStatement(qr);
+                ps.setInt(1, Integer.parseInt(request.getParameter("updateById")));
+                ResultSet rst = ps.executeQuery();
+                while (rst.next()) {
+                    bean.setCurrBalance(rst.getDouble("balance"));
+                }
+
+                Double remainingAmt = 0.0;
+                if (bean.getTransactionType().equalsIgnoreCase("CREDIT")) {
+                    remainingAmt = bean.getCurrBalance() + Double.parseDouble(bean.getAmtOfTransaction());
+                } else {
+                    if (bean.getCurrBalance() == 0.0) {
+                        errors.add("error.generic", new ActionMessage("error.generic", "Transaction Failed! Balance :0"));
+                        saveErrors(request, errors);
+                        return mapping.findForward("success");
+                    } else {
+                        remainingAmt = bean.getCurrBalance() - Double.parseDouble(bean.getAmtOfTransaction());
+                    }
+                }
+
+                p.setDouble(6, remainingAmt);
+                p.setInt(7, Integer.parseInt(request.getParameter("updateById")));
+                p.setString(8, request.getParameter("acc"));
                 int row = p.executeUpdate();
 
                 if (row > 0) {
@@ -80,6 +113,10 @@ public class TransactionDtlsAction extends Action {
             }
 
             con.commit();
+            bean.setModeOfTransaction("");
+            bean.setAmtOfTransaction("");
+            bean.setTransactionType("");
+            bean.setDot("");
 
         } catch (SQLException ex) {
             con.rollback();
