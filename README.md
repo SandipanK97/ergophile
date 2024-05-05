@@ -16,7 +16,8 @@
 # SOAP Webservice - SOAP UI
 ![image](https://github.com/SandipanK97/ergophile/assets/121749065/1b40f343-b30f-49e1-ad4d-f1bffecccbe8)
 # REST Webservice - POSTMAN
-![image](https://github.com/SandipanK97/ergophile/assets/121749065/78acf894-1f5a-4a3d-9f6c-7e2f13fc1c1e)
+![image](https://github.com/SandipanK97/ergophile/assets/121749065/bdcf1bcf-2cf2-4685-95f9-a8395f6a0f51)
+
 
 
 
