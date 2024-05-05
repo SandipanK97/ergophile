@@ -3,13 +3,10 @@
 
 
 # ErgoAnalytics [Core Banking Solution]
-![image](https://github.com/SandipanK97/ergophile/assets/121749065/4d603eb7-8440-4cdb-adfc-ff525d2546c6)
-![image](https://github.com/SandipanK97/ergophile/assets/121749065/0848f9e1-9f6c-4a86-9712-b3e9aa8b1e36)
-![image](https://github.com/SandipanK97/ergophile/assets/121749065/797881cb-9b55-416e-9995-be1766674c22)
-![image](https://github.com/SandipanK97/ergophile/assets/121749065/7c6f8f84-b682-4786-ab2c-714245c0d871)
-![image](https://github.com/SandipanK97/ergophile/assets/121749065/e5822514-bfa8-4fe1-a996-6c30b6bce78f)
-![image](https://github.com/SandipanK97/ergophile/assets/121749065/09bb82b6-edda-4893-97d1-21dcfafdea84)
-![image](https://github.com/SandipanK97/ergophile/assets/121749065/71e9cbf8-7e08-48fa-b28b-c1a9441bbd88)
+![image](https://github.com/SandipanK97/ergophile/assets/121749065/1427279a-553f-4a7e-b522-c283fbd90c7d)
+![image](https://github.com/SandipanK97/ergophile/assets/121749065/fd4b7f69-ed05-4ff4-ab05-5a3f6103f0b6)
+![image](https://github.com/SandipanK97/ergophile/assets/121749065/54f4ae40-8b61-4c06-a67b-1665aad1fac5)
+![image](https://github.com/SandipanK97/ergophile/assets/121749065/f6af6961-66d1-499a-9c7c-bca4cc4c114d)
 ![image](https://github.com/SandipanK97/ergophile/assets/121749065/03c6cde4-c947-4db2-adf1-b6594bc8685b)
 
 
