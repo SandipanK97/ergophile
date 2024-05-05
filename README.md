@@ -11,6 +11,8 @@
 # Strong Password Check API with Swagger enabled
 ![image](https://github.com/SandipanK97/ergophile/assets/121749065/bec63025-ded9-49f7-b4bf-8e467e9f2d37)
 
+# SOAP Webservice - SOAP UI
+![image](https://github.com/SandipanK97/ergophile/assets/121749065/1b40f343-b30f-49e1-ad4d-f1bffecccbe8)
 
 
 
