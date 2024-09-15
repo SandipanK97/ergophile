@@ -18,7 +18,7 @@
 # REST Webservice - POSTMAN
 ![image](https://github.com/SandipanK97/ergophile/assets/121749065/bdcf1bcf-2cf2-4685-95f9-a8395f6a0f51)
 
-# SecurePass - Desktop software to secure sensitive info
+# SecurePass - desktop app to store sensitive info through encryption
 ![image](https://github.com/user-attachments/assets/fbf4f5de-1397-44f3-8fb6-b13f4953b7b5)
 ![image](https://github.com/user-attachments/assets/dc7d86e6-d293-4ef5-a9b3-a49f232ee7e2)
 
