@@ -22,6 +22,10 @@
 ![image](https://github.com/user-attachments/assets/fbf4f5de-1397-44f3-8fb6-b13f4953b7b5)
 ![image](https://github.com/user-attachments/assets/dc7d86e6-d293-4ef5-a9b3-a49f232ee7e2)
 
+#Cancer Prone Patient Detection using ML
+![image](https://github.com/user-attachments/assets/e299b666-4e5f-4cd4-b409-9e2918a647bd)
+
+
 
 
 
