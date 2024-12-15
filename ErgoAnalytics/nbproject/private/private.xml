@@ -3,26 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/web/main.css</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/web/resources/main.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/src/java/com/audit/customer/CustomerDtlsAction.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/web/index.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/web/resources/account.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/web/resources/transaction.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/src/java/com/audit/customer/BarChartExample.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/src/java/com/audit/customer/FormBean.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/web/resources/audit.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/src/java/com/audit/customer/LoginFirstAction.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/src/java/com/audit/customer/ApplicationResources.properties</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/src/java/com/audit/customer/TransactionDtlsAction.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/web/WEB-INF/struts-config.xml</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/web/resources/Footer.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/web/resources/ErrorDisplay.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/web/resources/Navbar.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/web/styles.css</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/web/resources/Header.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/ErgoAnalytics/src/java/com/audit/customer/AccountDtlsAction.java</file>
+            <file>file:/C:/Project/ergophile/ErgoAnalytics/src/java/com/audit/customer/LoginFirstAction.java</file>
         </group>
     </open-files>
 </project-private>

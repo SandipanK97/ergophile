@@ -1,0 +1,114 @@
+@relation cancer_risk_prediction_india
+
+@attribute patient_id numeric
+@attribute age numeric
+@attribute gender {male, female}
+@attribute family_history {yes, no}
+@attribute tobacco_use {none, occasional, frequent}
+@attribute alcohol_consumption {yes, no}
+@attribute dietary_habits {healthy, moderate, unhealthy}
+@attribute physical_activity {low, moderate, high}
+@attribute pollution_exposure {low, moderate, high}
+@attribute cancer_diagnosis {low, medium, high}
+
+@data
+1,45,male,yes,frequent,yes,unhealthy,low,high,high
+2,34,female,no,none,no,healthy,moderate,low,low
+3,60,male,yes,occasional,no,unhealthy,low,high,high
+4,29,female,yes,none,no,moderate,high,low,low
+5,50,male,no,frequent,yes,unhealthy,low,moderate,medium
+6,38,female,yes,occasional,no,healthy,moderate,low,medium
+7,65,male,yes,frequent,yes,unhealthy,low,high,high
+8,40,male,no,frequent,yes,moderate,moderate,moderate,medium
+9,55,female,no,none,no,healthy,low,moderate,low
+10,70,male,yes,frequent,yes,unhealthy,low,high,high
+11,48,female,yes,occasional,no,moderate,moderate,low,medium
+12,30,female,no,none,no,healthy,high,low,low
+13,62,male,yes,frequent,no,unhealthy,low,high,high
+14,46,male,no,frequent,no,moderate,moderate,moderate,medium
+15,35,female,no,none,no,healthy,high,low,low
+16,55,male,yes,frequent,yes,unhealthy,low,high,high
+17,43,female,no,occasional,no,moderate,moderate,moderate,medium
+18,50,male,yes,frequent,yes,unhealthy,low,high,high
+19,28,female,no,none,no,healthy,high,low,low
+20,65,male,yes,frequent,yes,unhealthy,low,high,high
+21,52,male,no,frequent,yes,unhealthy,moderate,high,medium
+22,41,female,yes,occasional,no,moderate,moderate,moderate,medium
+23,63,male,yes,frequent,yes,unhealthy,low,high,high
+24,27,female,no,none,no,healthy,high,low,low
+25,48,male,yes,frequent,no,unhealthy,low,moderate,medium
+26,39,female,no,occasional,no,moderate,moderate,low,low
+27,58,male,yes,frequent,yes,unhealthy,low,high,high
+28,31,female,no,none,no,healthy,high,low,low
+29,64,male,yes,frequent,yes,unhealthy,low,high,high
+30,36,female,no,occasional,no,moderate,moderate,moderate,medium
+31,56,male,yes,frequent,yes,unhealthy,low,high,high
+32,29,female,no,none,no,healthy,high,low,low
+33,47,male,no,frequent,yes,moderate,low,moderate,medium
+34,42,female,yes,occasional,no,moderate,moderate,moderate,medium
+35,59,male,yes,frequent,yes,unhealthy,low,high,high
+36,30,female,no,none,no,healthy,high,low,low
+37,68,male,yes,frequent,yes,unhealthy,low,high,high
+38,33,female,no,occasional,no,moderate,moderate,moderate,medium
+39,53,male,yes,frequent,yes,unhealthy,low,high,high
+40,26,female,no,none,no,healthy,high,low,low
+41,50,male,no,frequent,yes,unhealthy,moderate,moderate,medium
+42,44,female,yes,occasional,no,moderate,moderate,moderate,medium
+43,61,male,yes,frequent,yes,unhealthy,low,high,high
+44,29,female,no,none,no,healthy,high,low,low
+45,48,male,yes,frequent,yes,unhealthy,low,moderate,medium
+46,32,female,no,occasional,no,moderate,moderate,low,low
+47,57,male,yes,frequent,yes,unhealthy,low,high,high
+48,31,female,no,none,no,healthy,high,low,low
+49,63,male,yes,frequent,yes,unhealthy,low,high,high
+50,34,female,no,occasional,no,moderate,moderate,moderate,medium
+51,56,male,yes,frequent,yes,unhealthy,low,high,high
+52,29,female,no,none,no,healthy,high,low,low
+53,46,male,no,frequent,yes,unhealthy,moderate,moderate,medium
+54,43,female,yes,occasional,no,moderate,moderate,moderate,medium
+55,60,male,yes,frequent,yes,unhealthy,low,high,high
+56,32,female,no,none,no,healthy,high,low,low
+57,65,male,yes,frequent,yes,unhealthy,low,high,high
+58,36,female,no,occasional,no,moderate,moderate,moderate,medium
+59,54,male,yes,frequent,yes,unhealthy,low,high,high
+60,28,female,no,none,no,healthy,high,low,low
+61,51,male,no,frequent,yes,unhealthy,moderate,moderate,medium
+62,44,female,yes,occasional,no,moderate,moderate,moderate,medium
+63,64,male,yes,frequent,yes,unhealthy,low,high,high
+64,27,female,no,none,no,healthy,high,low,low
+65,47,male,yes,frequent,yes,unhealthy,low,moderate,medium
+66,33,female,no,occasional,no,moderate,moderate,low,low
+67,58,male,yes,frequent,yes,unhealthy,low,high,high
+68,30,female,no,none,no,healthy,high,low,low
+69,67,male,yes,frequent,yes,unhealthy,low,high,high
+70,35,female,no,occasional,no,moderate,moderate,moderate,medium
+71,55,male,yes,frequent,yes,unhealthy,low,high,high
+72,28,female,no,none,no,healthy,high,low,low
+73,49,male,no,frequent,yes,unhealthy,moderate,moderate,medium
+74,40,female,yes,occasional,no,moderate,moderate,moderate,medium
+75,61,male,yes,frequent,yes,unhealthy,low,high,high
+76,30,female,no,none,no,healthy,high,low,low
+77,69,male,yes,frequent,yes,unhealthy,low,high,high
+78,34,female,no,occasional,no,moderate,moderate,moderate,medium
+79,53,male,yes,frequent,yes,unhealthy,low,high,high
+80,26,female,no,none,no,healthy,high,low,low
+81,50,male,no,frequent,yes,unhealthy,moderate,moderate,medium
+82,44,female,yes,occasional,no,moderate,moderate,moderate,medium
+83,62,male,yes,frequent,yes,unhealthy,low,high,high
+84,29,female,no,none,no,healthy,high,low,low
+85,47,male,yes,frequent,yes,unhealthy,low,moderate,medium
+86,30,female,no,occasional,no,moderate,moderate,low,low
+87,57,male,yes,frequent,yes,unhealthy,low,high,high
+88,32,female,no,none,no,healthy,high,low,low
+89,65,male,yes,frequent,yes,unhealthy,low,high,high
+90,36,female,no,occasional,no,moderate,moderate,moderate,medium
+91,54,male,yes,frequent,yes,unhealthy,low,high,high
+92,28,female,no,none,no,healthy,high,low,low
+93,51,male,no,frequent,yes,unhealthy,moderate,moderate,medium
+94,44,female,yes,occasional,no,moderate,moderate,moderate,medium
+95,63,male,yes,frequent,yes,unhealthy,low,high,high
+96,27,female,no,none,no,healthy,high,low,low
+97,46,male,no,frequent,yes,unhealthy,moderate,moderate,medium
+98,43,female,yes,occasional,no,moderate,moderate,moderate,medium
+99,60,male,yes,frequent,yes,unhealthy,low,high,high
+100,32,female,no,none,no,healthy,high,low,low

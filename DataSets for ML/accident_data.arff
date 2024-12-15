@@ -1,0 +1,25 @@
+@relation accident_data
+
+@attribute location_id numeric
+@attribute latitude numeric
+@attribute longitude numeric
+@attribute traffic_volume numeric
+@attribute weather {sunny, cloudy, rainy}
+@attribute accident_count {low, medium, high}
+
+@data
+1,22.5726,88.3639,1200,rainy,medium
+2,22.5815,88.4000,3000,sunny,low
+3,22.5668,88.3516,500,cloudy,low
+4,22.5990,88.3861,2500,sunny,high
+5,22.5508,88.3400,1000,rainy,medium
+6,22.5911,88.4053,1500,cloudy,low
+7,22.5628,88.3772,2000,sunny,high
+8,22.5862,88.3914,400,rainy,medium
+9,22.5718,88.3574,1800,cloudy,low
+10,22.5624,88.4120,800,sunny,low
+11,22.5890,88.3630,2700,rainy,high
+12,22.5602,88.4034,300,cloudy,low
+13,22.5805,88.3986,2200,sunny,medium
+14,22.5739,88.3410,1300,rainy,medium
+15,22.5677,88.3603,900,cloudy,low
