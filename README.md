@@ -1,5 +1,3 @@
-# Portfolio Webapp
-![image](https://github.com/SandipanK97/ergophile/assets/121749065/4a403447-88f8-4e35-8c2c-96fc1760ed24)
 
 
 # ErgoAnalytics [Core Banking Solution]
